@@ -24,13 +24,13 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='Application',
             name='user',
-            field=models.ForeignKey(related_name='oauth2_provider_application', to=settings.AUTH_USER_MODEL),
+            field=models.ForeignKey(related_name='oauth2_provider_application', to=settings.OAUTH2_PROVIDER_USER_MODEL),
             preserve_default=True,
         ),
         migrations.AlterField(
             model_name='AccessToken',
             name='user',
-            field=models.ForeignKey(blank=True, to=settings.AUTH_USER_MODEL, null=True),
+            field=models.ForeignKey(blank=True, to=settings.OAUTH2_PROVIDER_USER_MODEL, null=True),
             preserve_default=True,
         ),
     ]
